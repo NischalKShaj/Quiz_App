@@ -52,7 +52,9 @@ const useQuiz = create<UseQuizState>(
     addStatus: (status: string) =>
       set((state) => ({ config: { ...state.config, status: status } })),
     addScore: (score: number) =>
-      set((state) => ({ config: { ...state.config, score: score } })),
+      set((state) => ({
+        config: { ...state.config, score: state.config.score + 1 },
+      })),
   })
 );
 

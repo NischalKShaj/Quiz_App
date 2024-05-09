@@ -22,8 +22,8 @@ type CategoryType = {
   name: string;
 };
 
-const Mode = ["Boolean", "MCQ"];
-const Level = ["Easy", "Medium", "Hard"];
+const Mode = ["boolean", "multiple"];
+const Level = ["easy", "medium", "hard"];
 
 const DropDown = () => {
   const [category, setCategory] = useState<CategoryType[]>([]);
