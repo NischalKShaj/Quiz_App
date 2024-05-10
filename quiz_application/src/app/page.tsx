@@ -4,23 +4,43 @@
 import Button from "@/components/ui/Button";
 import DropDown from "@/components/ui/DropDown";
 import useQuiz from "./store";
+import { useTheme } from "@/context/ThemeContext";
+import { useEffect } from "react";
 
 export default function Home() {
   const quizConfig = useQuiz((state) => state.config);
   const addNumberOfQuestions = useQuiz((state) => state.addNumberOfQuestions);
   // console.log(quizConfig);
 
+  const { theme, toggle } = useTheme();
+
+  const toggleTheme = () => {
+    toggle();
+  };
+
+  useEffect(() => {
+    console.log("theme changed", theme);
+  }, [theme]);
+
   return (
-    <section className="flex flex-col justify-center items-center my-10">
+    <section className="flex flex-col justify-center items-center my-10 bg-white">
       <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
         Challenge Your Knowledge!
       </h1>
 
-      <section className="p-10 my-10 rounded-lg shadow-xl w-[75%]">
+      <section
+        className={`p-10 my-10 rounded-lg shadow-xl w-[75%] ${
+          theme === "light" ? "bg-white" : "bg-gray-800"
+        }`}
+      >
         <div>
           <label
             htmlFor="first_name"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className={`block mb-2 text-sm font-medium ${
+              theme === "light"
+                ? "text-gray-900 dark:text-white"
+                : "dark:text-gray-900 text-white"
+            }`}
           >
             Number of Questions
           </label>
@@ -39,6 +59,14 @@ export default function Home() {
         <div className="w-full flex flex-col justify-center items-center">
           <DropDown />
           <Button />
+          <button
+            className={`${
+              theme === "light" ? "text-gray-900" : "text-white"
+            } my-3`}
+            onClick={toggleTheme}
+          >
+            Change appearance
+          </button>
         </div>
       </section>
     </section>

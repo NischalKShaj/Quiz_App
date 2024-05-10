@@ -48,7 +48,7 @@ const DropDown = () => {
     <section className="flex justify-evenly items-center py-5 w-full">
       <div className="px-7 py-4 w-1/3 mx-4">
         <DropdownMenu>
-          <DropdownMenuTrigger className="flux outline-none justify-between w-full px-10 py-3 rounded-lg shadow-lg hover:bg-blue-600 hover:text-white">
+          <DropdownMenuTrigger className="flux outline-none justify-between w-full px-10 py-3 rounded-lg shadow-lg bg-blue-600 text-white">
             {config.category.name ? config.category.name : "Choose Category"}
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-56">
@@ -69,7 +69,7 @@ const DropDown = () => {
 
       <div className="px-7 py-4 w-1/3 mx-4">
         <DropdownMenu>
-          <DropdownMenuTrigger className="flux outline-none justify-between w-full px-10 py-3 rounded-lg shadow-lg hover:bg-blue-600 hover:text-white">
+          <DropdownMenuTrigger className="flux outline-none justify-between w-full px-10 py-3 rounded-lg shadow-lg bg-blue-600 text-white">
             {config.level ? config.level : "Choose Level"}
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-56">
@@ -86,7 +86,7 @@ const DropDown = () => {
 
       <div className="px-7 py-4 w-1/3 mx-4">
         <DropdownMenu>
-          <DropdownMenuTrigger className="flux outline-none justify-between w-full px-10 py-3 rounded-lg shadow-lg hover:bg-blue-600 hover:text-white">
+          <DropdownMenuTrigger className="flux outline-none justify-between w-full px-10 py-3 rounded-lg shadow-lg bg-blue-600 text-white">
             {config.mode ? config.mode : "Choose Mode"}
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-56">

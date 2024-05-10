@@ -1,5 +1,6 @@
 "use client";
-
+import React from "react";
+import { ThemeProvider } from "@/context/ThemeContext";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import useQuiz from "./store";
@@ -14,10 +15,13 @@ export default function RootLayout({
   quiz: React.ReactNode;
 }) {
   const config = useQuiz((state) => state.config);
-  let render = config.status ? quiz : children;
+  const render = config.status ? quiz : children;
+
   return (
     <html lang="en">
-      <body className={inter.className}>{render}</body>
+      <body className={inter.className}>
+        <ThemeProvider>{render}</ThemeProvider>
+      </body>
     </html>
   );
 }
